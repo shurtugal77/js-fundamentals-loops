@@ -17,8 +17,26 @@ const deepThree = []
 // Your code here
 // }
 
+for (let i = START; i <= END; i++) {
+  simpleOne.push(i)
+}
+console.log(simpleOne)
+
 // 2. Using nested for loops, add arrays to 'nestedOne' where each array has n copies of the outer 'loop index'
 //    eg [[1],[2,2],...]
+
+let currentNumber
+
+for (let i = START; i <= END; i++) {
+  nestedOne.push([i])
+  currentNumber = i // Set counter outside of for loops for current item in array
+
+  for (let n = 1; n <= nestedOne.length - 1; n++) {
+    // start at 1 to skip "one copy"
+    nestedOne[currentNumber - 1].push(currentNumber) // push the same number to the outer loop index
+  }
+}
+console.log(nestedOne)
 
 // 3. As 2, but each array should contain the values from the outer 'loop index' to 1 inclusive. Update array 'nestedTwo'
 //    eg [[1],[2,1],...]
